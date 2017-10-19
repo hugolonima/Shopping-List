@@ -65,8 +65,9 @@ public class ShoppingListActivity extends AppCompatActivity {
     private void maybeRemoveItem(final int pos) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.confirm);
+        String fmt = getResources().getString(R.string.confirm_message);
         builder.setMessage(String.format(
-                "Are you sure you want to remove '%s'?",
+                fmt,
                 itemList.get(pos)));
         builder.setPositiveButton(R.string.remove, new DialogInterface.OnClickListener() {
                     @Override
